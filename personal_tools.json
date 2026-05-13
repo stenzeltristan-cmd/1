@@ -1,0 +1,16 @@
+{
+  "skills": [
+    {
+      "name": "Example Custom Skill",
+      "description": "This is an example skill you can replace with your own",
+      "created_at": "2024-05-13"
+    }
+  ],
+  "prompts": [
+    {
+      "name": "Example Prompt",
+      "template": "Your prompt template here",
+      "description": "What this prompt does"
+    }
+  ]
+}

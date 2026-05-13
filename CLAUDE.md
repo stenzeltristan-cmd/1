@@ -2,17 +2,35 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Repository Status
+## Purpose
 
-This is a minimal test repository with basic file structure. The repository contains:
-- A single file `3` with initial content
-- Two branches: `main` and `claude/websetup-6wHNA` (active development branch)
+This repository is an **Anthropic Directory Bridge** — a unified interface to access Anthropic's official Skills, Plugins, and other directories alongside your personal tools. Available in both Claude.ai and Claude Desktop.
+
+## Architecture
+
+- **mcp_server/** — MCP (Model Context Protocol) server that exposes:
+  - Anthropic's official directories (live, fetched on-demand)
+  - Personal skills and tools storage
+  - Search/browse across all tools
+- **personal_tools.json** — Storage for your custom skills, prompts, and tools
+- **SETUP.md** — Configuration guide for Claude Desktop and Claude.ai
+
+## Key Commands
+
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Start the MCP server (runs on http://127.0.0.1:8000)
+python mcp_server/server.py
+```
 
 ## Development Workflow
 
-All development should happen on the `claude/websetup-6wHNA` branch. When complete:
-1. Create a commit with a clear, descriptive message
-2. Push to the designated branch: `git push -u origin claude/websetup-6wHNA`
+1. All changes should be on `claude/websetup-6wHNA` branch
+2. Update `personal_tools.json` to add new tools/skills
+3. Modify `mcp_server/server.py` for new functionality
+4. Commit and push: `git push -u origin claude/websetup-6wHNA`
 
 ## Git Operations
 
@@ -20,9 +38,12 @@ All development should happen on the `claude/websetup-6wHNA` branch. When comple
 - **Fetching updates**: `git fetch origin <branch-name>`
 - **Current development branch**: `claude/websetup-6wHNA`
 
-## Notes for Future Development
+## Available Tools (via MCP)
 
-As this repository grows, add:
-- Build/test commands once a project structure is established
-- High-level architecture documentation
-- Key dependencies and setup instructions
+- `list_anthropic_skills` — Browse Anthropic's official skills
+- `list_anthropic_plugins` — Browse Anthropic's plugins
+- `list_personal_skills` — View your custom tools
+- `add_personal_skill` — Add new personal skill
+- `search_all_tools` — Search across everything
+
+See SETUP.md for platform configuration and usage details.
