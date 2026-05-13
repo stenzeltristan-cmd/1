@@ -1,6 +1,6 @@
 # Setup Guide: Anthropic Directory Bridge
 
-This repository bridges Anthropic's official Skills, Plugins, and other directories with your personal tools, making them available across Claude.ai and Claude Desktop.
+This repository bridges Anthropic's official Skills, Plugins, and other directories with your personal tools. **Private bridge for Claude Desktop + Claude Code only.**
 
 ## Quick Start
 
@@ -14,7 +14,7 @@ pip install -r requirements.txt
 python mcp_server/server.py
 ```
 
-The server will run on `http://127.0.0.1:8000`
+The server runs on `http://127.0.0.1:8000` (localhost only — no external access)
 
 ## Configuration
 
@@ -34,11 +34,9 @@ Add to `mcpServers`:
 }
 ```
 
-### Claude.ai (Web)
+### Claude Code (IDE)
 
-1. Go to Claude.ai Settings
-2. Add MCP Server: `http://127.0.0.1:8000`
-3. (Requires local server to be running or accessible via tunnel)
+Claude Code automatically detects MCP servers configured in your Claude Desktop config. Once configured above, Claude Code has immediate access to all tools.
 
 ## Using the Bridge
 
@@ -92,8 +90,15 @@ Example format:
 }
 ```
 
-## Syncing Across Platforms
+## Syncing Across Claude Desktop & Claude Code
 
-- **Local changes**: Edit `personal_tools.json` and both platforms will see updates
+- **Local changes**: Edit `personal_tools.json` and both interfaces will see updates
 - **Anthropic directories**: Fetched live when you access tools
 - **Keep in sync**: Push changes to your branch to share with other instances
+
+## Privacy
+
+- ✅ Localhost only — no external exposure
+- ✅ Claude Desktop + Claude Code only — no web access
+- ✅ Personal tools stored locally
+- ✅ Completely private — zero external access

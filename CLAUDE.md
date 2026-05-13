@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Purpose
 
-This repository is an **Anthropic Directory Bridge** — a unified interface to access Anthropic's official Skills, Plugins, and other directories alongside your personal tools. Available in both Claude.ai and Claude Desktop.
+This repository is an **Anthropic Directory Bridge** — a private, local interface to access Anthropic's official Skills, Plugins, and other directories alongside your personal tools. **Shared between Claude Desktop and Claude Code only** (no external/web access).
 
 ## Architecture
 
